@@ -1,0 +1,53 @@
+{
+  "name": "seothemes/joncsi",
+  "type": "wordpress-theme",
+  "description": "Genesis starter theme with a modern development workflow.",
+  "keywords": [
+    "WordPress",
+    "wordpress-theme-development",
+    "genesis-framework"
+  ],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Lee Anthony",
+      "homepage": "https://briantics.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/seothemes/joncsi/issues",
+    "source": "https://github.com/seothemes/joncsi"
+  },
+  "require": {
+    "php": ">=5.4",
+    "seothemes/core": "dev-master",
+    "tgmpa/tgm-plugin-activation": "dev-develop"
+  },
+  "require-dev": {},
+  "autoload": {
+    "psr-4": {
+      "Briantics\\Joncsi\\": "app/"
+    }
+  },
+  "suggest": {},
+  "config": {
+    "sort-order": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-create-project-cmd": [
+      "yarn install"
+    ],
+    "post-install-cmd": [
+      "yarn install"
+    ],
+    "stylelint": [
+      "stylelint './assets/scss/**/*.scss' --fix"
+    ],
+    "phpcs": [
+      "phpcs"
+    ]
+  }
+}

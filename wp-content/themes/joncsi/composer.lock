@@ -1,0 +1,120 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "dfd9cb55d3f9f89110bc82c36ccb8771",
+    "content-hash": "215c2d4c4a459cce8f2e3b7ace3fd1e3",
+    "packages": [
+        {
+            "name": "seothemes/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/seothemes/core.git",
+                "reference": "7f6b38b41f7097633454b5cd0269f54cf3dd356e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/seothemes/core/zipball/7f6b38b41f7097633454b5cd0269f54cf3dd356e",
+                "reference": "7f6b38b41f7097633454b5cd0269f54cf3dd356e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SeoThemes\\Core\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "seothemes",
+                    "email": "seothemeswp@gmail.com"
+                }
+            ],
+            "description": "A config-based composer package that provides a set of modules to extend Genesis child theme development.",
+            "time": "2018-11-08 11:55:23"
+        },
+        {
+            "name": "tgmpa/tgm-plugin-activation",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TGMPA/TGM-Plugin-Activation.git",
+                "reference": "46d80fbb2cb4a579003c5397ad98b97d14cc1273"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TGMPA/TGM-Plugin-Activation/zipball/46d80fbb2cb4a579003c5397ad98b97d14cc1273",
+                "reference": "46d80fbb2cb4a579003c5397ad98b97d14cc1273",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+                "phpcompatibility/phpcompatibility-wp": "^2.0",
+                "wp-coding-standards/wpcs": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "class-tgm-plugin-activation.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Griffin",
+                    "homepage": "http://thomasgriffinmedia.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Gary Jones",
+                    "homepage": "https://github.com/GaryJones",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
+            "homepage": "http://tgmpluginactivation.com",
+            "keywords": [
+                "activation",
+                "library",
+                "plugins",
+                "theme",
+                "wordpress"
+            ],
+            "time": "2018-10-14 07:42:51"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "seothemes/core": 20,
+        "tgmpa/tgm-plugin-activation": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4"
+    },
+    "platform-dev": []
+}

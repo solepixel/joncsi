@@ -1,0 +1,4 @@
+# Ignore vendor directory.
+vendor/
+!resources/scss/vendor
+!resources/js/vendor

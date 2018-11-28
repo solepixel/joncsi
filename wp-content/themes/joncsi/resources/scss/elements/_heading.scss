@@ -1,0 +1,26 @@
+////
+/// Heading.
+///
+/// @group  Base
+/// @author Lee Anthony <seothemeswp@gmail.com>
+/// @link   https://github.com/seothemes/genesis-starter-theme
+////
+
+@mixin heading {
+	margin: 0 0 $spacing--m;
+	font-family: $font-family--heading;
+	font-weight: $font-weight--semibold;
+	line-height: $line-height--heading;
+}
+
+#{$all-headings} {
+
+	@include heading;
+}
+
+@each $heading, $font-size in $font-sizes {
+
+	#{$heading} {
+		font-size: $font-size;
+	}
+}

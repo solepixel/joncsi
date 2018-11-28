@@ -1,0 +1,13 @@
+#adminmenu .menu-icon-joncsi-wod .wp-menu-image img {
+	max-width: 24px;
+	opacity: 1;
+	-webkit-filter: grayscale(100%);
+	/* Safari 6.0 - 9.0 */
+	        filter: grayscale(100%);
+}
+
+#adminmenu .menu-icon-joncsi-wod.wp-has-current-submenu .wp-menu-image img,
+#adminmenu .menu-icon-joncsi-wod:hover .wp-menu-image img {
+	-webkit-filter: none;
+	        filter: none;
+}

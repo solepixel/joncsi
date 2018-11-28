@@ -1,0 +1,22 @@
+.post-edit-link {
+	position: fixed;
+	top: 70%;
+	left: -15px;
+	display: block;
+	text-transform: uppercase;
+	font-size: 11px;
+	background-color: #333;
+	color: #eee;
+	transition: all 200ms ease-in-out;
+	padding: 3px 6px;
+	opacity: 0.5;
+	text-decoration: none;
+
+	&:hover {
+		color: #fff;
+		background-color: #000;
+		left: 0;
+		opacity: 1;
+		text-decoration: none;
+	}
+}
