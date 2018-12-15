@@ -1,0 +1,197 @@
+header {
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 3px 6px;
+	background-color: #272727;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	line-height: 26px;
+}
+
+.mobile-workout-title {
+	border: 0;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	display: none;
+}
+
+.workout-switch {
+	display: flex;
+	list-style: none;
+	margin: 0;
+
+	@include mq( $until: $enable-mobile-tabs ) {
+		border-right: 0;
+	}
+
+	li {
+		flex: 1 1 auto;
+		list-style: none;
+		margin: 0;
+
+		a {
+			padding: 5px 10px;
+			display: block;
+			text-transform: uppercase;
+			background-color: #eee;
+			font-size: 14px;
+			cursor: pointer;
+
+			&.active,
+			&:hover {
+				background-color: #fff;
+				text-decoration: none;
+			}
+		}
+
+		&.source-j19 a,
+		&.source-linchpin a,
+		&.source-wodwell a {
+			background-repeat: no-repeat;
+			background-position: 10px 50%;
+			background-size: 20px 20px;
+			padding-left: 35px;
+		}
+
+		&.source-j19 a {
+			background-image: url( 'resources/img/j19-logo.svg' );
+		}
+		&.source-linchpin a {
+			background-image: url( 'resources/img/linchpin-logo.svg' );
+		}
+		&.source-wodwell a {
+			background-image: url( 'resources/img/wodwell-logo.svg' );
+		}
+	}
+}
+
+.workout-container {
+	background-color: #eee;
+	min-width: calc( 100% - #{$tools-width} );
+	overflow-y: hidden;
+	transition: all 200ms ease-in-out;
+	position: relative;
+	z-index: 2;
+
+	.workout-content {
+		display: none;
+		transition: all 200ms ease-in-out;
+
+		@include mq( $until: 1180px ) {
+			overflow-y: auto;
+		}
+
+		&.active {
+			display: flex;
+			@include mq( $until: 1180px ) {
+				display: block;
+			}
+		}
+
+		> div {
+			border-right: 1px solid #e8e8e8;
+			border-left: 1px solid #f7f7f7;
+			flex: 1 1 auto;
+			min-width: 25%;
+
+			@include mq( $until: $enable-mobile-tabs ) {
+				border-right: 0;
+				border-left: 0;
+
+				&:last-child article {
+					padding-bottom: 33px;
+				}
+			}
+		}
+
+		&.focused > div {
+			flex: 1 1;
+			min-width: 0;
+			&.focused {
+				flex: 3 1;
+				font-size: 36px;
+				background-color: #f8f8f8
+			}
+		}
+
+		article {
+			padding: 15px;
+			height: calc( 100% - 30px );
+			overflow-y: auto;
+
+			@include mq( $until: 1180px ) {
+				height: auto;
+			}
+
+			h2 {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+.bottom-tabs {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+	background-color: #fff;
+	height: 30px;
+	display: none;
+
+	@include mq( $until: $enable-mobile-tabs ) {
+		display: flex;
+	}
+
+	a {
+		display: block;
+		flex: 1 1 auto;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 30px;
+		padding: 0 15px;
+		border-right: 1px solid #ccc;
+		cursor: pointer;
+		text-decoration: none;
+		background-color: #eee;
+
+		&:hover {
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		&:last-of-type {
+			border-right: 0;
+		}
+
+		&.active {
+			background-color: #fff;
+		}
+	}
+}
+
+@include mq( $until: $enable-mobile-tabs ) {
+	.tab-contents {
+		display: none;
+		width: 100%;
+		&.active {
+			display: block;
+		}
+	}
+}
+
+.centered .contents {
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50% );
+	flex: none !important;
+	border: 0 !important;
+}

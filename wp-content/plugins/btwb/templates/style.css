@@ -1,0 +1,147 @@
+/* Leaderboard and Result List */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+.btwb-mens-leaderboard{
+	float:left;
+	width:50%;
+}
+.btwb-leaderboard h5{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 5px 0px;
+}
+.btwb-womens-leaderboard{
+	float:right;
+	width:50%;
+}
+ul.btwb-result-list{
+	width:95%;
+	margin:20px 0px 0px 0px;
+	list-style-type:none;
+}
+ol.btwb-result-list{
+	width:95%;
+	margin:20px 0px 0px 0px;
+	list-style-position:inside;
+	
+}
+.btwb-result-list > li:before {
+	clear:both;
+}
+.btwb-leaderboard .btwb-result-list li{
+	height: 150px;
+}	
+.btwb-result-list li{
+	padding: 10px;
+	border-width: thin;
+	border-color: #ccc;
+	border-style: solid;
+	margin-bottom: 20px;
+}
+.btwb-result-list li:after { 
+   clear: both;
+}
+.btwb-result-list li h6{
+	float:left;
+        margin-right:5px;
+	margin-top: 4px;
+	min-width:15px;
+}
+ol.btwb-result-list li .athlete-image{
+        float:left;
+        margin:-19px 5px 0px 20px;
+	width:30px;
+	border-radius:20px;
+}
+ul.btwb-result-list li .athlete-image{
+        float:left;
+        margin-right:5px;
+	width:30px;
+	border-radius:20px;
+}
+.btwb-leaderboard .btwb-result-list .btwb-result-container{ 
+	width:80%;
+	max-height:130px;
+	overflow:scroll;
+	margin-top:-16px;
+}
+.btwb-result-list li .btwb-result-container{
+	float:left;
+	width:95%;
+}
+.btwb-result-list li .btwb-result-container .btwb-athlete-name{
+	font-weight:bold;
+        line-height:1em;
+}
+.btwb-result-list li .btwb-result-container .btwb-result-attributes span img{
+	width:15px;
+}
+.btwb-result-list li .btwb-result-container .btwb-result-attributes span{
+ 	float:right;
+	margin-right:5px;
+}
+.btwb-result-list li .btwb-result-container .btwb-result-attributes span:first-child{
+ 	float:left;
+	margin-right:5px;
+}
+.btwb-result-list li .btwb-result-container .btwb-result-attributes span:nth-child(2){
+ 	float:left;
+	margin-right:5px;
+}
+.btwb-result-list li .btwb-result-container .btwb-result-attributes:after{
+	content: "."; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+}
+.btwb-result-list li .btwb-result-container .btwb-result{
+	margin:10px 0px 10px 0px;
+}
+.btwb-result-list li .btwb-result-container .btwb-result .btwb-result-score{
+	font-size:1em;
+	font-weight:bold;
+}
+.btwb-result-list li .btwb-result-container .btwb-result .btwb-result-score-notes{ 
+	font-style:italic;
+	margin:0px 0px 0px 0px;
+	font-size:.9em;
+}
+.btwb-result-list li .btwb-result-container .btwb-result .btwb-workout-name{
+}
+
+.btwb-leaderboard hr{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	width:95%;
+}
+.btwb-result-list hr{
+	width:100%;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+
+/* WOD List */
+.btwb-wod-list{
+	list-style-type:none;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+.btwb-wod-list h5{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+.btwb-workout-description{
+	white-space: pre-wrap;
+}
+.btwb-wod-list .btwb-workout-description{ 
+	margin-top:10px;
+}
+.btwb-recent-results h5{
+	margin:0px 0px 0px 0px;
+}

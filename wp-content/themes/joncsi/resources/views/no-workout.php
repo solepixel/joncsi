@@ -10,7 +10,7 @@
  */
 
 ?>
-<div id="no-workout" class="workout-content">
+<div id="no-workout" class="workout-content active">
 	<div class="centered">
 		<div class="contents">
 			<h2>Rest Day</h2>

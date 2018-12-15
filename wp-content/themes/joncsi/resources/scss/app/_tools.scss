@@ -1,0 +1,98 @@
+.tools {
+	background: #000;
+	min-width: $tools-width;
+	position: relative;
+	transition: all 200ms ease-in-out;
+
+	@include mq( $until: $enable-mobile-tabs ) {
+		min-width: 100%;
+	}
+
+	button {
+		transition: all 200ms ease-in-out;
+	}
+
+	&.large {
+		min-width: $tools-large-width;
+	}
+
+	header {
+		background-color: #eee;
+		color: #222;
+		font-weight: bold;
+
+		.logo-icon {
+			max-width: 24px;
+			display: inline-block;
+			margin-right: 3px;
+			margin-top: 2px;
+		}
+	}
+
+	.clock {
+		font-family: 'Roboto Mono', monospace;
+		padding: 0 15px;
+		text-align: right;
+		color: green;
+		font-size: 55px;
+		text-align: center;
+		min-height: 88px;
+		transition: all 200ms ease-in-out;
+	}
+	.clock-controls {
+		display: flex;
+		button {
+			flex: 1 1 auto;
+			text-transform: uppercase;
+			font-weight: normal;
+			padding: 8px 15px;
+			margin-right: 1px;
+
+			&.secondary {
+				background-color: $color--primary;
+				&.tabata {
+					background-color: $color--accent;
+				}
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.workout-title {
+		color: #eee;
+		text-align: center;
+		padding: 30px 10px;
+		font-size: 24px;
+	}
+	.workout-controls {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		button {
+			flex: 1 1 auto;
+			text-transform: uppercase;
+			font-weight: normal;
+			padding: 8px 15px;
+			margin-right: 1px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&.large {
+		.clock {
+			font-size: 100px;
+		}
+		.clock-controls button,
+		.workout-controls button {
+			padding: 15px 25px;
+			font-size: 18px;
+		}
+	}
+}

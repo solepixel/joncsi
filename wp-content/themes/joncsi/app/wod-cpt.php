@@ -94,14 +94,20 @@ function joncsi_get_adjacent_workout( $relative = 'after' ) {
 			while ( $wod_query->have_posts() ) :
 				$wod_query->the_post();
 
+				$workout_id = get_the_ID();
+
 				$response['success']       = true;
 				$response['workout_date']  = get_the_date( 'Y-m-d' );
 				$response['workout_title'] = joncsi_heart_icon( get_the_ID(), false ) . get_the_title();
-				$response['workout_id']    = get_the_ID();
+				$response['workout_id']    = $workout_id;
 
 				ob_start();
 				include get_stylesheet_directory() . '/resources/views/workouts.php';
 				$response['workouts'] = ob_get_clean();
+
+				ob_start();
+				include get_stylesheet_directory() . '/resources/views/percentages.php';
+				$response['percentages'] = ob_get_clean();
 
 			endwhile;
 			wp_reset_postdata();
@@ -138,14 +144,20 @@ function joncsi_get_today_workout() {
 		while ( $wod_query->have_posts() ) :
 			$wod_query->the_post();
 
+			$workout_id = get_the_ID();
+
 			$response['workout_date']  = get_the_date( 'Y-m-d' );
 			$response['workout_title'] = joncsi_heart_icon( get_the_ID(), false ) . get_the_title();
-			$response['workout_id']    = get_the_ID();
+			$response['workout_id']    = $workout_id;
 			$response['success']       = true;
 
 			ob_start();
 			include get_stylesheet_directory() . '/resources/views/workouts.php';
 			$response['workouts'] = ob_get_clean();
+
+			ob_start();
+			include get_stylesheet_directory() . '/resources/views/percentages.php';
+			$response['percentages'] = ob_get_clean();
 		endwhile;
 		wp_reset_postdata();
 	} else {
@@ -265,14 +277,10 @@ function joncsi_get_wod_siblings( $date = '', $limit = 1 ) {
 }
 
 function joncsi_wod_content( $content ) {
-	if ( is_front_page() ) {
-		return $content;
-	}
-
 	$workout_title = get_the_title();
 	ob_start();
 	include get_stylesheet_directory() . '/resources/views/workouts.php';
-	$content = ob_get_clean();
+	$content = '<div class="workout-container">' . ob_get_clean() . '</div>';
 
 	return $content;
 }

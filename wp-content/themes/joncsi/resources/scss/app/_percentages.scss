@@ -1,0 +1,32 @@
+.percentage-matrix {
+	padding: 30px 20px 0;
+	max-height: calc( 100vh - 300px );
+	overflow-y: auto;
+	position: relative;
+
+	table {
+		margin: 0;
+
+		&, td, th {
+			border: 0;
+		}
+		thead th,
+		tfoot th {
+			background-color: #ccc;
+			text-transform: uppercase;
+			font-size: 12px;
+		}
+		thead th:first-child,
+		tfoot th:first-child,
+		tbody tr td:first-child {
+			text-align: right;
+		}
+		tbody td {
+			color: #fff;
+			font-size: 16px;
+		}
+		tbody tr:nth-child(even) td {
+			background-color: #333;
+		}
+	}
+}

@@ -19,12 +19,12 @@ $search_text = apply_filters( 'genesis_search_text', __( 'Search this website', 
 $strings['label'] = apply_filters( 'genesis_search_form_label', '' );
 /** This filter is documented in wp-includes/general-template.php */
 $input_value             = apply_filters( 'the_search_query', get_search_query() ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Duplicated WordPress filter
-$strings['input_value']  = ! empty( $input_value ) ? $input_value : '';
+$strings['input_value']  = ! empty( $input_value ) ? $input_value : $search_text;
 $strings['submit_value'] = apply_filters( 'genesis_search_button_text', esc_attr__( 'Search', 'genesis' ) );
 $strings['placeholder']  = $search_text;
 
 if ( genesis_a11y( 'search-form' ) ) {
-	$strings['label'] = isset( $strings['label'] ) ? $strings['label'] : $strings['placeholder'];
+	$strings['label'] = ! empty( $strings['label'] ) ? $strings['label'] : $strings['placeholder'];
 }
 
 $form = new Genesis_Search_Form( $strings );

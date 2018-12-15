@@ -81,10 +81,10 @@ $core_assets = [
 			},
 		],
 		[
-			AssetLoader::HANDLE      => 'google-fonts',
-			AssetLoader::URL         => 'https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Mono',
-			AssetLoader::VERSION     => wp_get_theme()->get( 'Version' ),
-			AssetLoader::ENQUEUE     => true,
+			AssetLoader::HANDLE  => 'google-fonts',
+			AssetLoader::URL     => 'https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Mono',
+			AssetLoader::VERSION => wp_get_theme()->get( 'Version' ),
+			AssetLoader::ENQUEUE => true,
 		],
 	],
 ];
@@ -386,6 +386,43 @@ $core_hooks = [
 			},
 		],
 		[
+			Hooks::TAG      => 'admin_init',
+			Hooks::CALLBACK => function () {
+				add_filter( 'manage_joncsi-wod_posts_columns', function( $columns ) {
+					$new_columns = array();
+					foreach ( $columns as $key => $column ) {
+						$new_columns[ $key ] = $column;
+						if ( 'title' === $key ) {
+							$new_columns['sources'] = __( 'Workout Sources', 'joncsi' );
+							$new_columns['likes']   = __( 'Likes', 'joncsi' );
+						}
+					}
+					return $new_columns;
+				} );
+
+				add_filter( 'manage_joncsi-wod_posts_custom_column', function ( $column, $post_id ) {
+					if ( 'likes' === $column ) {
+						$likes = get_post_meta( $post_id, '_joncsi_likes', true );
+						if ( ! $likes ) {
+							$likes = 0;
+						}
+						echo esc_html( $likes );
+					} elseif ( 'sources' === $column ) {
+						$soures  = 'None';
+						$options = get_field( 'workout_options' );
+						if ( count( $options ) ) {
+							$soures = '';
+							foreach ( $options as $option ) {
+								$sources .= $sources ? ', ' : '';
+								$sources .= $option['source']['label'];
+							}
+						}
+						echo esc_html( $sources );
+					}
+				}, 10, 2 );
+			},
+		],
+		[
 			Hooks::TAG      => 'genesis_setup',
 			Hooks::CALLBACK => function () {
 				register_default_headers( [
@@ -468,6 +505,9 @@ $core_hooks = [
 		[
 			Hooks::TAG      => 'the_content',
 			Hooks::CALLBACK => 'joncsi_wod_content',
+			Hooks::CONDITIONAL => function () {
+				return is_singular( 'joncsi-wod' );
+			},
 		],
 	],
 

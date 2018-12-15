@@ -32,7 +32,7 @@ toolkit.extendConfig(
 			images: 'resources/img/**/*',
 			scss: 'resources/scss/**/*.scss',
 			css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
-			js: ['resources/js/**/*.js', '!node_modules/**'],
+			js: ['resources/js/**/*.js', '!node_modules/**', '!resources/js/*.js'],
 			json: ['**/*.json', '!node_modules/**'],
 			i18n: './resources/lang/',
 			sassdoc: './resources/scss/**/*.scss',

@@ -4,7 +4,7 @@
  * Author: Briantics, Inc.
  * Author URI: https://briantics.com
  * Description: A custom theme for Joncsi.
- * Version: 1.0.9
+ * Version: 1.1.4
  * License: GPL-3.0-or-later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1393,28 +1393,7 @@ body.landing-page .entry-content {
 	min-height: 100vh;
 }
 
-.front-page .app-wrap,
-.front-page .app-wrap > .tab-container,
-.front-page .workout-container,
-.front-page .workout-container .workout-content {
-	position: relative;
-	height: 100vh;
-}
-
-.front-page .app-wrap > .tab-container {
-	display: flex;
-}
-
-.front-page .app-wrap.collapsed .workout-container {
-	height: 0;
-}
-
-.front-page .app-wrap.collapsed .loading {
-	opacity: 1;
-	visibility: visible;
-}
-
-.front-page .loading {
+.loading {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
@@ -1426,7 +1405,7 @@ body.landing-page .entry-content {
 	transition: all 200ms ease-in-out;
 }
 
-.front-page .loading:before {
+.loading:before {
 	position: absolute;
 	content: 'Loading...';
 	top: 50%;
@@ -1436,7 +1415,7 @@ body.landing-page .entry-content {
 	padding-top: 80px;
 }
 
-.front-page .spinner {
+.spinner {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -1447,347 +1426,6 @@ body.landing-page .entry-content {
 	background-color: #333333;
 	-webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
 	        animation: sk-rotateplane 1.2s infinite ease-in-out;
-}
-
-.front-page .workout-container {
-	background-color: #eeeeee;
-	min-width: calc( 100% - 400px);
-	overflow-y: hidden;
-	transition: all 200ms ease-in-out;
-	position: relative;
-	z-index: 2;
-}
-
-.front-page .workout-container.tools-mode {
-	min-width: calc( 100% - 800px);
-}
-
-.front-page .workout-container .workout-content {
-	display: none;
-	transition: all 200ms ease-in-out;
-}
-
-.front-page .workout-container .workout-content.active {
-	display: flex;
-}
-
-.front-page .workout-container .workout-content > div {
-	border-right: 1px solid #e8e8e8;
-	border-left: 1px solid #f7f7f7;
-	flex: 1 1 auto;
-}
-
-.front-page .workout-container .workout-content.focused > div {
-	flex: 1 1;
-}
-
-.front-page .workout-container .workout-content.focused > div.focused {
-	flex: 3 1;
-	font-size: 36px;
-	font-size: 3.6rem;
-	background-color: #f8f8f8;
-}
-
-.front-page .workout-container .workout-content article {
-	padding: 15px;
-	height: calc( 100% - 30px);
-	overflow-y: auto;
-}
-
-.front-page .workout-container .workout-content article h2 {
-	font-size: 18px;
-	font-size: 1.8rem;
-}
-
-.front-page .workout-container .like-spinner {
-	position: absolute;
-	z-index: 10;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	display: block;
-	transition: all 200ms ease-in-out;
-	width: 80px;
-	height: 80px;
-	text-align: center;
-	-webkit-transform-origin: 50% 50%;
-	        transform-origin: 50% 50%;
-}
-
-.front-page .workout-container .like-spinner.liked .sk-folding-cube {
-	transition: all 200ms ease-in-out;
-	-webkit-transform: scale(1.25) rotate(45deg);
-	        transform: scale(1.25) rotate(45deg);
-}
-
-.front-page .workout-container .like-spinner.liked .sk-folding-cube .sk-cube1 {
-	opacity: 0;
-}
-
-.front-page .workout-container .like-spinner.liked .sk-folding-cube .sk-cube:before {
-	background-color: red;
-	-webkit-animation: none;
-	        animation: none;
-}
-
-.front-page .workout-container .like-spinner.disliked .sk-folding-cube {
-	transition: all 200ms ease-in-out;
-	-webkit-transform: scale(0.75) rotate(45deg);
-	        transform: scale(0.75) rotate(45deg);
-}
-
-.front-page .workout-container .like-spinner.disliked .sk-folding-cube .sk-cube1 {
-	opacity: 0;
-}
-
-.front-page .workout-container .like-spinner.disliked .sk-folding-cube .sk-cube:before {
-	background-color: #000000;
-	-webkit-animation: none;
-	        animation: none;
-}
-
-.front-page .workout-container .like-spinner.hide .sk-folding-cube,
-.front-page .workout-container .like-spinner.hide .sk-folding-cube:before {
-	opacity: 0;
-}
-
-.front-page .workout-container .like-spinner.hide .sk-folding-cube {
-	transition: all 500ms ease-in-out;
-	-webkit-transform: scale(0) rotate(45deg);
-	        transform: scale(0) rotate(45deg);
-}
-
-.front-page header {
-	text-transform: uppercase;
-	font-size: 12px;
-	font-size: 1.2rem;
-	padding: 3px 6px;
-	background-color: #272727;
-	color: #ffffff;
-	text-align: center;
-	cursor: pointer;
-}
-
-.front-page .tools {
-	background: #000000;
-	min-width: 400px;
-	position: relative;
-	transition: all 200ms ease-in-out;
-}
-
-.front-page .tools button {
-	transition: all 200ms ease-in-out;
-}
-
-.front-page .tools.large {
-	min-width: 800px;
-}
-
-.front-page .tools header {
-	background-color: #eeeeee;
-	color: #222222;
-	font-weight: bold;
-}
-
-.front-page .tools .clock {
-	font-family: 'Roboto Mono', monospace;
-	padding: 0 15px;
-	text-align: right;
-	color: green;
-	font-size: 55px;
-	font-size: 5.5rem;
-	text-align: center;
-	min-height: 88px;
-	transition: all 200ms ease-in-out;
-}
-
-.front-page .tools .clock-controls {
-	display: flex;
-}
-
-.front-page .tools .clock-controls button {
-	flex: 1 1 auto;
-	text-transform: uppercase;
-	font-weight: normal;
-	padding: 8px 15px;
-	margin-right: 1px;
-}
-
-.front-page .tools .clock-controls button.secondary {
-	background-color: #1e90ff;
-}
-
-.front-page .tools .clock-controls button.secondary.tabata {
-	background-color: #ffa500;
-}
-
-.front-page .tools .clock-controls button:last-child {
-	margin-right: 0;
-}
-
-.front-page .tools .workout-title {
-	color: #eeeeee;
-	text-align: center;
-	padding: 30px 10px;
-	font-size: 24px;
-	font-size: 2.4rem;
-}
-
-.front-page .tools .workout-controls {
-	display: flex;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	left: 0;
-}
-
-.front-page .tools .workout-controls button {
-	flex: 1 1 auto;
-	text-transform: uppercase;
-	font-weight: normal;
-	padding: 8px 15px;
-	margin-right: 1px;
-}
-
-.front-page .tools .workout-controls button:last-child {
-	margin-right: 0;
-}
-
-.front-page .tools.large .clock {
-	font-size: 100px;
-	font-size: 10rem;
-}
-
-.front-page .tools.large .clock-controls button,
-.front-page .tools.large .workout-controls button {
-	padding: 15px 25px;
-	font-size: 18px;
-	font-size: 1.8rem;
-}
-
-.front-page .bottom-tabs {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	z-index: 5;
-	background-color: #ffffff;
-	height: 30px;
-	display: none;
-}
-
-.front-page .bottom-tabs a {
-	display: block;
-	flex: 1 1 auto;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 14px;
-	font-size: 1.4rem;
-	line-height: 30px;
-	line-height: 3rem;
-	padding: 0 15px;
-	border-right: 1px solid #cccccc;
-	cursor: pointer;
-	text-decoration: none;
-	background-color: #eeeeee;
-}
-
-.front-page .bottom-tabs a:hover {
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.front-page .bottom-tabs a:last-of-type {
-	border-right: 0;
-}
-
-.front-page .bottom-tabs a.active {
-	background-color: #ffffff;
-}
-
-.front-page .centered .contents {
-	text-align: center;
-	vertical-align: middle;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	flex: none !important;
-	border: 0 !important;
-}
-
-.front-page .mobile-workout-title {
-	border: 0;
-	background-color: #000000;
-	color: #ffffff;
-	text-align: center;
-	padding: 10px;
-	display: none;
-}
-
-.front-page .workout-switch {
-	display: flex;
-	list-style: none;
-	margin: 0;
-}
-
-.front-page .workout-switch li {
-	flex: 1 1 auto;
-	list-style: none;
-	margin: 0;
-}
-
-.front-page .workout-switch li a {
-	padding: 5px 10px;
-	display: block;
-	text-transform: uppercase;
-	background-color: #eeeeee;
-	font-size: 14px;
-	font-size: 1.4rem;
-	cursor: pointer;
-}
-
-.front-page .workout-switch li a.active,
-.front-page .workout-switch li a:hover {
-	background-color: #ffffff;
-	text-decoration: none;
-}
-
-.front-page .workout-switch li.source-j19 a,
-.front-page .workout-switch li.source-linchpin a {
-	background-repeat: no-repeat;
-	background-position: 10px 50%;
-	background-size: 20px 20px;
-	padding-left: 35px;
-}
-
-.front-page .workout-switch li.source-j19 a {
-	background-image: url('resources/img/j19-logo.svg');
-}
-
-.front-page .workout-switch li.source-linchpin a {
-	background-image: url('resources/img/linchpin-logo.svg');
-}
-
-.front-page .heart-icon {
-	display: inline-block;
-	margin-right: 10px;
-	width: 16px;
-	height: 16px;
-	background-image: url('resources/img/heart.svg');
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-}
-
-.front-page .heart-icon.filled {
-	background-image: url('resources/img/heart-filled.svg');
-}
-
-.front-page .mobile-workout-title .heart-icon {
-	position: relative;
-	top: 3px;
 }
 
 /** Loading Animation */
@@ -1816,6 +1454,79 @@ body.landing-page .entry-content {
 		        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 		-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 	}
+}
+
+.heart-icon {
+	display: inline-block;
+	margin-right: 10px;
+	width: 16px;
+	height: 16px;
+	background-image: url('resources/img/heart.svg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.heart-icon.filled {
+	background-image: url('resources/img/heart-filled.svg');
+}
+
+.like-spinner {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	display: block;
+	transition: all 200ms ease-in-out;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	-webkit-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+}
+
+.like-spinner.liked .sk-folding-cube {
+	transition: all 200ms ease-in-out;
+	-webkit-transform: scale(1.25) rotate(45deg);
+	        transform: scale(1.25) rotate(45deg);
+}
+
+.like-spinner.liked .sk-folding-cube .sk-cube1 {
+	opacity: 0;
+}
+
+.like-spinner.liked .sk-folding-cube .sk-cube:before {
+	background-color: red;
+	-webkit-animation: none;
+	        animation: none;
+}
+
+.like-spinner.disliked .sk-folding-cube {
+	transition: all 200ms ease-in-out;
+	-webkit-transform: scale(0.75) rotate(45deg);
+	        transform: scale(0.75) rotate(45deg);
+}
+
+.like-spinner.disliked .sk-folding-cube .sk-cube1 {
+	opacity: 0;
+}
+
+.like-spinner.disliked .sk-folding-cube .sk-cube:before {
+	background-color: #000000;
+	-webkit-animation: none;
+	        animation: none;
+}
+
+.like-spinner.hide .sk-folding-cube,
+.like-spinner.hide .sk-folding-cube:before {
+	opacity: 0;
+}
+
+.like-spinner.hide .sk-folding-cube {
+	transition: all 500ms ease-in-out;
+	-webkit-transform: scale(0) rotate(45deg);
+	        transform: scale(0) rotate(45deg);
 }
 
 /** Like Heart Animation */
@@ -1926,6 +1637,356 @@ body.landing-page .entry-content {
 		        transform: perspective(140px) rotateY(180deg);
 		opacity: 0;
 	}
+}
+
+.percentage-matrix {
+	padding: 30px 20px 0;
+	max-height: calc( 100vh - 300px);
+	overflow-y: auto;
+	position: relative;
+}
+
+.percentage-matrix table {
+	margin: 0;
+}
+
+.percentage-matrix table,
+.percentage-matrix table td,
+.percentage-matrix table th {
+	border: 0;
+}
+
+.percentage-matrix table thead th,
+.percentage-matrix table tfoot th {
+	background-color: #cccccc;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+.percentage-matrix table thead th:first-child,
+.percentage-matrix table tfoot th:first-child,
+.percentage-matrix table tbody tr td:first-child {
+	text-align: right;
+}
+
+.percentage-matrix table tbody td {
+	color: #ffffff;
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.percentage-matrix table tbody tr:nth-child(even) td {
+	background-color: #333333;
+}
+
+.front-page .app-wrap,
+.front-page .app-wrap > .tab-container,
+.front-page .workout-container,
+.front-page .workout-container .workout-content {
+	position: relative;
+	height: 100vh;
+}
+
+.front-page .app-wrap > .tab-container {
+	display: flex;
+}
+
+.front-page .app-wrap.collapsed .workout-container {
+	height: 0;
+}
+
+.front-page .app-wrap.collapsed .loading {
+	opacity: 1;
+	visibility: visible;
+}
+
+.front-page .workout-container.tools-mode {
+	min-width: calc( 100% - 800px);
+}
+
+.front-page .workout-switch {
+	border-right: 1px solid #333333;
+}
+
+.front-page .mobile-workout-title .heart-icon {
+	position: relative;
+	top: 3px;
+}
+
+.tools {
+	background: #000000;
+	min-width: 400px;
+	position: relative;
+	transition: all 200ms ease-in-out;
+}
+
+.tools button {
+	transition: all 200ms ease-in-out;
+}
+
+.tools.large {
+	min-width: 800px;
+}
+
+.tools header {
+	background-color: #eeeeee;
+	color: #222222;
+	font-weight: bold;
+}
+
+.tools header .logo-icon {
+	max-width: 24px;
+	display: inline-block;
+	margin-right: 3px;
+	margin-top: 2px;
+}
+
+.tools .clock {
+	font-family: 'Roboto Mono', monospace;
+	padding: 0 15px;
+	text-align: right;
+	color: green;
+	font-size: 55px;
+	font-size: 5.5rem;
+	text-align: center;
+	min-height: 88px;
+	transition: all 200ms ease-in-out;
+}
+
+.tools .clock-controls {
+	display: flex;
+}
+
+.tools .clock-controls button {
+	flex: 1 1 auto;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding: 8px 15px;
+	margin-right: 1px;
+}
+
+.tools .clock-controls button.secondary {
+	background-color: #1e90ff;
+}
+
+.tools .clock-controls button.secondary.tabata {
+	background-color: #ffa500;
+}
+
+.tools .clock-controls button:last-child {
+	margin-right: 0;
+}
+
+.tools .workout-title {
+	color: #eeeeee;
+	text-align: center;
+	padding: 30px 10px;
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
+.tools .workout-controls {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.tools .workout-controls button {
+	flex: 1 1 auto;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding: 8px 15px;
+	margin-right: 1px;
+}
+
+.tools .workout-controls button:last-child {
+	margin-right: 0;
+}
+
+.tools.large .clock {
+	font-size: 100px;
+	font-size: 10rem;
+}
+
+.tools.large .clock-controls button,
+.tools.large .workout-controls button {
+	padding: 15px 25px;
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+header {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-size: 1.2rem;
+	padding: 3px 6px;
+	background-color: #272727;
+	color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+	line-height: 26px;
+	line-height: 2.6rem;
+}
+
+.mobile-workout-title {
+	border: 0;
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px;
+	display: none;
+}
+
+.workout-switch {
+	display: flex;
+	list-style: none;
+	margin: 0;
+}
+
+.workout-switch li {
+	flex: 1 1 auto;
+	list-style: none;
+	margin: 0;
+}
+
+.workout-switch li a {
+	padding: 5px 10px;
+	display: block;
+	text-transform: uppercase;
+	background-color: #eeeeee;
+	font-size: 14px;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+
+.workout-switch li a.active,
+.workout-switch li a:hover {
+	background-color: #ffffff;
+	text-decoration: none;
+}
+
+.workout-switch li.source-j19 a,
+.workout-switch li.source-linchpin a,
+.workout-switch li.source-wodwell a {
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: 20px 20px;
+	padding-left: 35px;
+}
+
+.workout-switch li.source-j19 a {
+	background-image: url('resources/img/j19-logo.svg');
+}
+
+.workout-switch li.source-linchpin a {
+	background-image: url('resources/img/linchpin-logo.svg');
+}
+
+.workout-switch li.source-wodwell a {
+	background-image: url('resources/img/wodwell-logo.svg');
+}
+
+.workout-container {
+	background-color: #eeeeee;
+	min-width: calc( 100% - 400px);
+	overflow-y: hidden;
+	transition: all 200ms ease-in-out;
+	position: relative;
+	z-index: 2;
+}
+
+.workout-container .workout-content {
+	display: none;
+	transition: all 200ms ease-in-out;
+}
+
+.workout-container .workout-content.active {
+	display: flex;
+}
+
+.workout-container .workout-content > div {
+	border-right: 1px solid #e8e8e8;
+	border-left: 1px solid #f7f7f7;
+	flex: 1 1 auto;
+	min-width: 25%;
+}
+
+.workout-container .workout-content.focused > div {
+	flex: 1 1;
+	min-width: 0;
+}
+
+.workout-container .workout-content.focused > div.focused {
+	flex: 3 1;
+	font-size: 36px;
+	font-size: 3.6rem;
+	background-color: #f8f8f8;
+}
+
+.workout-container .workout-content article {
+	padding: 15px;
+	height: calc( 100% - 30px);
+	overflow-y: auto;
+}
+
+.workout-container .workout-content article h2 {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+.bottom-tabs {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+	background-color: #ffffff;
+	height: 30px;
+	display: none;
+}
+
+.bottom-tabs a {
+	display: block;
+	flex: 1 1 auto;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 30px;
+	line-height: 3rem;
+	padding: 0 15px;
+	border-right: 1px solid #cccccc;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: #eeeeee;
+}
+
+.bottom-tabs a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.bottom-tabs a:last-of-type {
+	border-right: 0;
+}
+
+.bottom-tabs a.active {
+	background-color: #ffffff;
+}
+
+.centered .contents {
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	flex: none !important;
+	border: 0 !important;
 }
 
 @media (min-width: 896px) {
@@ -2486,33 +2547,43 @@ body.landing-page .entry-content {
 	.front-page .workout-container .workout-content {
 		height: calc( 100vh - 30px);
 	}
-	.front-page .tools {
-		min-width: 100%;
-	}
-	.front-page .bottom-tabs {
-		display: flex;
-	}
-	.front-page .tab-contents {
-		display: none;
-		width: 100%;
-	}
-	.front-page .tab-contents.active {
-		display: block;
-	}
 	.front-page .mobile-workout-title {
 		display: block;
 		width: 100%;
 	}
+	.tools {
+		min-width: 100%;
+	}
+	.workout-switch {
+		border-right: 0;
+	}
+	.workout-container .workout-content > div {
+		border-right: 0;
+		border-left: 0;
+	}
+	.workout-container .workout-content > div:last-child article {
+		padding-bottom: 33px;
+	}
+	.bottom-tabs {
+		display: flex;
+	}
+	.tab-contents {
+		display: none;
+		width: 100%;
+	}
+	.tab-contents.active {
+		display: block;
+	}
 }
 
 @media (max-width: 1180px) {
-	.front-page .workout-container .workout-content {
+	.workout-container .workout-content {
 		overflow-y: auto;
 	}
-	.front-page .workout-container .workout-content.active {
+	.workout-container .workout-content.active {
 		display: block;
 	}
-	.front-page .workout-container .workout-content article {
+	.workout-container .workout-content article {
 		height: auto;
 	}
 }

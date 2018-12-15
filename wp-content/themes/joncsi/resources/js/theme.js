@@ -593,9 +593,17 @@ var joncsi = (function ($) {
 						if ( response.workout_id ) {
 							$('.app-wrap').attr( 'data-workout-id', response.workout_id );
 						}
+						if ( response.percentages ) {
+							$( '.percentage-matrix' ).html( response.percentages );
+						} else {
+							$( '.percentage-matrix' ).html( '' );
+						}
 						init_column_focus();
 						init_tabs();
 						init_like();
+						if ( typeof btwbInitialize !== 'undefined' ) {
+							btwbInitialize( jQuery, BTWB_CONFIG );
+						}
 						$('.app-wrap').removeClass( 'collapsed' );
 					}, 300 );
 				}
@@ -642,7 +650,11 @@ var joncsi = (function ($) {
 				$(this).addClass( 'active' );
 
 				// Activate Tab.
-				$( '.workout-container .workout-content.active' ).removeClass( 'active' );
+				var $container = $( '.workout-container' );
+				if ( ! $container.length ) {
+					$container = $( '.entry-content' );
+				}
+				$( '.workout-content.active', $container ).removeClass( 'active' );
 				$( tab_id ).addClass( 'active' );
 			}
 		});
@@ -660,12 +672,6 @@ var joncsi = (function ($) {
 	},
 
 	init_like = function() {
-		// how many milliseconds is a long press?
-		var longpress = 1000;
-		// holds the start time.
-		var start;
-		// Interval for displaying reveal.
-		var reveal_interval;
 		// How long to show like action.
 		var display_like = 500;
 
@@ -718,27 +724,6 @@ var joncsi = (function ($) {
 			e.preventDefault();
 			reveal_like_spinner();
 		});
-
-		/*
-		$( '#workouts' ).off( 'mousedown' ).on( 'mousedown', function( e ) {
-			start = new Date().getTime();
-			reveal_interval = setInterval(function(){
-				if ( new Date().getTime() >= ( start + longpress ) ) {
-					reveal_like_spinner();
-				}
-			}, 100 );
-		}).off( 'mouseleave' ).on( 'mouseleave', function( e ) {
-			$( '.like-spinner' ).remove();
-			start = 0;
-			clearInterval( reveal_interval );
-		}).off( 'mouseup' ).on( 'mouseup', function( e ) {
-			if ( new Date().getTime() < ( start + longpress ) ) {
-				$( '.like-spinner' ).remove();
-			}
-			start = 0;
-			clearInterval( reveal_interval );
-		} );
-		*/
 	},
 
 	/**

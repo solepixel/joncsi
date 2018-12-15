@@ -29,7 +29,10 @@ if ( ! function_exists( 'the_field' ) ) {
 		</div>
 
 		<div class="tools tab-contents" id="controls">
-			<header><?php bloginfo( 'name' ); ?></header>
+			<header>
+				<img src="<?php echo esc_attr( get_stylesheet_directory_uri() ); ?>/resources/img/vomiting.png" class="logo-icon">
+				<?php bloginfo( 'name' ); ?>
+			</header>
 			<div class="clock"></div>
 			<div class="clock-controls">
 				<button class="clock-clock" style="display: none;">Clock</button>
@@ -42,6 +45,10 @@ if ( ! function_exists( 'the_field' ) ) {
 			<div class="workout-title">
 				<?php joncsi_heart_icon( $workout_id ); ?>
 				<?php echo $workout_title; ?>
+			</div>
+
+			<div class="percentage-matrix">
+				<?php include get_stylesheet_directory() . '/resources/views/percentages.php'; ?>
 			</div>
 
 			<div class="workout-controls">
